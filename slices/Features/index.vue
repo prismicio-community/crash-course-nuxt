@@ -18,7 +18,7 @@
           :key="$prismic.asText(item.description)"
           class="grid gap-6"
           :class="{
-            'justify-items-center text-center': alignment === 'Center'
+            'justify-items-center text-center': slice.primary.alignment === 'Center'
           }"
         >
           <div class="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-slate-200 text-slate-500">
@@ -28,6 +28,7 @@
             />
           </div>
           <PrismicRichText
+            class="grid gap-6"
             :field="item.description"
             :html-serializer="cardHTMLSerializer"
           />
@@ -52,32 +53,32 @@
 </template>
 
 <script>
-import { getSliceComponentProps } from "@prismicio/vue/components";
+import { getSliceComponentProps } from '@prismicio/vue/components'
 
 export default {
   // The array passed to `getSliceComponentProps` is purely optional.
   // Consider it as a visual hint for you when templating your slice.
-  props: getSliceComponentProps(["slice", "index", "slices", "context"]),
-  data() {
+  props: getSliceComponentProps(['slice', 'index', 'slices', 'context']),
+  data () {
     return {
-      htmlSerializer(type, _element, _content, children) {
+      htmlSerializer (type, element, _content, children) {
         switch (type) {
           case 'heading1':
             return /* html */ `<h2 class="text-center text-4xl font-semibold text-slate-800">${children.join('')}</h2>`
           case 'hyperlink':
             return /* html */ `<a href="${element.data.url}" class="underline decoration-1 underline-offset-1">${children.join('')}</a>`
-        default: 
-          return null
+          default:
+            return null
         }
       },
-      cardHTMLSerializer(type, _element, _content, children) {
+      cardHTMLSerializer (type, element, _content, children) {
         switch (type) {
           case 'heading3':
             return /* html */ `<h3 class="text-2xl font-semibold text-slate-800">${children.join('')}</h3>`
           case 'hyperlink':
             return /* html */ `<a href="${element.data.url}" class="underline decoration-1 underline-offset-1">${children.join('')}</a>`
-        default: 
-          return null
+          default:
+            return null
         }
       }
     }

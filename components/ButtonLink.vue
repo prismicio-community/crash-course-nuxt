@@ -13,11 +13,11 @@ export default {
   props: {
     field: {
       type: Object,
-      required: true,
+      required: true
     },
     type: {
-      type: string,
-      default: "filled"
+      type: String,
+      default: 'filled'
     }
   }
 }

@@ -7,7 +7,7 @@ import { components } from '~/slices'
 
 export default {
   async asyncData ({ $prismic, params }) {
-    const page = await $prismic.api.getByUID('page', params.uid)
+    const page = await $prismic.api.getByUID('page', params.uid || 'home')
 
     return { page }
   },

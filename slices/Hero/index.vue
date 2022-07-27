@@ -2,7 +2,7 @@
   <Bounded as="section" class="relative bg-gray-800 text-slate-300">
     <PrismicImage
       :field="slice.primary.backgroundImage"
-      class="pointer-events-none select-none object-cover"
+      class="absolute inset-0 pointer-events-none select-none object-cover w-full h-full"
     />
     <div class="relative grid justify-items-center gap-6 text-center">
       <PrismicText
@@ -37,11 +37,11 @@
 </template>
 
 <script>
-import { getSliceComponentProps } from "@prismicio/vue/components";
+import { getSliceComponentProps } from '@prismicio/vue/components'
 
 export default {
   // The array passed to `getSliceComponentProps` is purely optional.
   // Consider it as a visual hint for you when templating your slice.
-  props: getSliceComponentProps(["slice", "index", "slices", "context"])
+  props: getSliceComponentProps(['slice', 'index', 'slices', 'context'])
 }
 </script>

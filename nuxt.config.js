@@ -42,7 +42,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/styles/global.css',
+    '@/styles/global.css'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -51,14 +51,14 @@ export default {
   prismic: {
     endpoint: sm.apiEndpoint,
     modern: true,
-    linkResolver(doc) {
-      if (doc.type === "page") {
-        return doc.uid === "home" ? "/" : `/${doc.uid}`
+    linkResolver (doc) {
+      if (doc.type === 'page') {
+        return doc.uid === 'home' ? '/' : `/${doc.uid}`
       }
 
-      return "/"
+      return '/'
     },
-    htmlSerializer(type, element, _content, children) {
+    htmlSerializer (type, element, _content, children) {
       switch (type) {
         case 'hyperlink':
           return /* html */ `<a href="${element.data.url}" class="underline decoration-1 underline-offset-1">${children.join('')}</a>`

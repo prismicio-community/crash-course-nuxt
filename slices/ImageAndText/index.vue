@@ -32,22 +32,22 @@
 </template>
 
 <script>
-import { getSliceComponentProps } from "@prismicio/vue/components";
+import { getSliceComponentProps } from '@prismicio/vue/components'
 
 export default {
   // The array passed to `getSliceComponentProps` is purely optional.
   // Consider it as a visual hint for you when templating your slice.
-  props: getSliceComponentProps(["slice", "index", "slices", "context"]),
-  data() {
+  props: getSliceComponentProps(['slice', 'index', 'slices', 'context']),
+  data () {
     return {
-      htmlSerializer(type, _element, _content, children) {
+      htmlSerializer (type, element, _content, children) {
         switch (type) {
           case 'heading1':
             return /* html */ `<h2 class="text-4xl font-semibold text-slate-800">${children.join('')}</h2>`
           case 'hyperlink':
             return /* html */ `<a href="${element.data.url}" class="underline decoration-1 underline-offset-1">${children.join('')}</a>`
-        default: 
-          return null
+          default:
+            return null
         }
       }
     }

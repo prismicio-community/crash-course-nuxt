@@ -11,9 +11,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "prismic-purple": "#5163ba",
-      },
-    },
+        'prismic-purple': '#5163ba'
+      }
+    }
   },
   plugins: []
 }
