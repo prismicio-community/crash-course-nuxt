@@ -1,4 +1,4 @@
-import sm from './sm.json'
+import { repositoryName } from './slicemachine.config.json'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -55,7 +55,7 @@ export default {
   components: true,
 
   prismic: {
-    endpoint: sm.apiEndpoint,
+    endpoint: `https://${repositoryName}.cdn.prismic.io/api/v2`,
     modern: true,
     linkResolver (doc) {
       if (doc.type === 'page') {
