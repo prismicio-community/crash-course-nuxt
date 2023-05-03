@@ -13,7 +13,7 @@ The fastest way to learn Prismic is with a hands-on demo.
 ```sh
 npx degit https://github.com/prismicio-community/crash-course-nuxt crash-course-nuxt
 cd crash-course-nuxt
-npx @slicemachine/init
+npx @slicemachine/init@latest
 ```
 
 With these commands, you’ll get a fully-featured Prismic website to test out.
