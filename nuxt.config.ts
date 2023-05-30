@@ -34,13 +34,13 @@ export default defineNuxtConfig({
       routes: [
         {
           type: 'page',
-          uid: 'home',
-          path: '/'
+          path: '/:uid',
         },
         {
           type: 'page',
-          path: '/:uid'
-        }
+          uid: 'home',
+          path: '/',
+        },
       ]
     }
   },
