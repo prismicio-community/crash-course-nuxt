@@ -35,7 +35,7 @@ Continue learning about Prismic with the [Prismic + Nuxt.js Crash Course][prismi
 ## License
 
 ```
-Copyright 2013-2022 Prismic <contact@prismic.io> (https://prismic.io)
+Copyright 2013-2023 Prismic <contact@prismic.io> (https://prismic.io)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -50,5 +50,5 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-[prismic]: https://prismic.io/
+[prismic]: https://prismic.io
 [prismic-crash-course]: https://prismic.io/docs/technologies/nuxtjs-crash-course

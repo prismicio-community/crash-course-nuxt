@@ -1,5 +1,18 @@
+<script setup lang="ts">
+import { Content } from '@prismicio/client'
+
+// The array passed to \`getSliceComponentProps\` is purely optional.
+// Consider it as a visual hint for you when templating your slice.
+defineProps(getSliceComponentProps<Content.HeroSlice>(
+  ['slice', 'index', 'slices', 'context']
+));
+</script>
+
 <template>
-  <Bounded as="section" class="relative bg-gray-800 text-slate-300">
+  <Bounded
+    as="section"
+    class="relative bg-gray-800 text-slate-300"
+  >
     <PrismicImage
       :field="slice.primary.backgroundImage"
       class="absolute inset-0 pointer-events-none select-none object-cover w-full h-full"
@@ -22,8 +35,14 @@
         wrapper="div"
         :field="slice.primary.text"
       />
-      <ul v-if="slice.items.length" class="flex flex-wrap gap-4">
-        <li v-for="item in slice.items" :key="item.buttonText">
+      <ul
+        v-if="slice.items.length"
+        class="flex flex-wrap gap-4"
+      >
+        <li
+          v-for="item in slice.items"
+          :key="item.buttonText || ''"
+        >
           <ButtonLink
             :field="item.buttonLink"
             :type="item.buttonStyle === 'Filled' ? 'filled' : 'outlined'"
@@ -35,13 +54,3 @@
     </div>
   </Bounded>
 </template>
-
-<script>
-import { getSliceComponentProps } from '@prismicio/vue/components'
-
-export default {
-  // The array passed to `getSliceComponentProps` is purely optional.
-  // Consider it as a visual hint for you when templating your slice.
-  props: getSliceComponentProps(['slice', 'index', 'slices', 'context'])
-}
-</script>

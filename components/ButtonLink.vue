@@ -1,3 +1,16 @@
+<script setup lang="ts">
+defineProps({
+    field: {
+      type: Object,
+      required: true
+    },
+    type: {
+      type: String,
+      default: 'filled'
+    }
+})
+</script>
+
 <template>
   <PrismicLink
     :field="field"
@@ -8,17 +21,3 @@
   </PrismicLink>
 </template>
 
-<script>
-export default {
-  props: {
-    field: {
-      type: Object,
-      required: true
-    },
-    type: {
-      type: String,
-      default: 'filled'
-    }
-  }
-}
-</script>

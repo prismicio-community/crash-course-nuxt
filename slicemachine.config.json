@@ -1,6 +1,8 @@
 {
-  "libraries": ["./slices"],
+  "libraries": [
+    "./slices"
+  ],
   "repositoryName": "crash-course",
-  "adapter": "@slicemachine/adapter-nuxt2",
+  "adapter": "@slicemachine/adapter-nuxt",
   "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
 }
