@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import { LinkField } from '@prismicio/client';
+
 defineProps({
     field: {
-      type: Object,
+      type: Object as PropType<LinkField>,
       required: true
     },
     type: {
