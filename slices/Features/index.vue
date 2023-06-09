@@ -1,5 +1,31 @@
+<script setup lang="ts">
+import { Content, HTMLRichTextMapSerializer } from '@prismicio/client'
+
+// The array passed to \`getSliceComponentProps\` is purely optional.
+// Consider it as a visual hint for you when templating your slice.
+defineProps(getSliceComponentProps<Content.FeaturesSlice>(
+  ['slice', 'index', 'slices', 'context']
+));
+const prismic = usePrismic()
+
+const serializer: HTMLRichTextMapSerializer = {
+  ...prismic.options.richTextSerializer,
+  heading1: ({ children }) =>
+    /* html */ `<h2 class="text-center text-4xl font-semibold text-slate-800">${children}</h2>`,
+}
+
+const cardSerializer : HTMLRichTextMapSerializer = {
+  ...prismic.options.richTextSerializer,
+  heading3: ({ children }) =>
+    /* html */ `<h3 class="text-2xl font-semibold text-slate-800">${children}</h3>`
+}
+</script>
+
 <template>
-  <Bounded as="section" class="bg-white text-slate-500">
+  <Bounded
+    as="section"
+    class="bg-white text-slate-500"
+  >
     <div class="grid justify-items-center gap-6">
       <PrismicText
         v-if="$prismic.asText(slice.primary.tagline)"
@@ -10,7 +36,7 @@
       <PrismicRichText
         class="grid max-w-prose justify-center gap-6 text-center"
         :field="slice.primary.text"
-        :html-serializer="htmlSerializer"
+        :html-serializer="serializer"
       />
       <ul class="mt-8 grid grid-cols-1 items-start gap-12 md:grid-cols-3">
         <li
@@ -30,7 +56,7 @@
           <PrismicRichText
             class="grid gap-6"
             :field="item.description"
-            :html-serializer="cardHTMLSerializer"
+            :html-serializer="cardSerializer"
           />
           <div v-if="item.buttonLink.link_type !== 'Any'">
             <PrismicLink
@@ -51,37 +77,3 @@
     </div>
   </Bounded>
 </template>
-
-<script>
-import { getSliceComponentProps } from '@prismicio/vue/components'
-
-export default {
-  // The array passed to `getSliceComponentProps` is purely optional.
-  // Consider it as a visual hint for you when templating your slice.
-  props: getSliceComponentProps(['slice', 'index', 'slices', 'context']),
-  data () {
-    return {
-      htmlSerializer (type, element, _content, children) {
-        switch (type) {
-          case 'heading1':
-            return /* html */ `<h2 class="text-center text-4xl font-semibold text-slate-800">${children.join('')}</h2>`
-          case 'hyperlink':
-            return /* html */ `<a href="${element.data.url}" class="underline decoration-1 underline-offset-1">${children.join('')}</a>`
-          default:
-            return null
-        }
-      },
-      cardHTMLSerializer (type, element, _content, children) {
-        switch (type) {
-          case 'heading3':
-            return /* html */ `<h3 class="text-2xl font-semibold text-slate-800">${children.join('')}</h3>`
-          case 'hyperlink':
-            return /* html */ `<a href="${element.data.url}" class="underline decoration-1 underline-offset-1">${children.join('')}</a>`
-          default:
-            return null
-        }
-      }
-    }
-  }
-}
-</script>

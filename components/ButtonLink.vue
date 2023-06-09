@@ -1,3 +1,18 @@
+<script setup lang="ts">
+import { LinkField } from '@prismicio/client';
+
+defineProps({
+    field: {
+      type: Object as PropType<LinkField>,
+      required: true
+    },
+    type: {
+      type: String,
+      default: 'filled'
+    }
+})
+</script>
+
 <template>
   <PrismicLink
     :field="field"
@@ -8,17 +23,3 @@
   </PrismicLink>
 </template>
 
-<script>
-export default {
-  props: {
-    field: {
-      type: Object,
-      required: true
-    },
-    type: {
-      type: String,
-      default: 'filled'
-    }
-  }
-}
-</script>

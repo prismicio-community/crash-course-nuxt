@@ -34,10 +34,7 @@
           "config": {
             "label": "Alignment",
             "placeholder": "Determines how to display features",
-            "options": [
-              "Left",
-              "Center"
-            ],
+            "options": ["Left", "Center"],
             "default_value": "Left"
           }
         }
@@ -45,11 +42,7 @@
       "items": {
         "image": {
           "type": "Image",
-          "config": {
-            "label": "Image",
-            "constraint": {},
-            "thumbnails": []
-          }
+          "config": { "label": "Image", "constraint": {}, "thumbnails": [] }
         },
         "description": {
           "type": "StructuredText",

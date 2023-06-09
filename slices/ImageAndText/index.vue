@@ -1,5 +1,25 @@
+<script setup lang="ts">
+import { Content, HTMLRichTextMapSerializer } from '@prismicio/client'
+
+// The array passed to \`getSliceComponentProps\` is purely optional.
+// Consider it as a visual hint for you when templating your slice.
+defineProps(getSliceComponentProps<Content.ImageAndTextSlice>(
+  ['slice', 'index', 'slices', 'context']
+));
+const prismic = usePrismic()
+
+const serializer: HTMLRichTextMapSerializer = {
+  ...prismic.options.richTextSerializer,
+  heading1: ({ children }) =>
+    /* html */ `<h2 class="text-4xl font-semibold text-slate-800">${children}</h2>`,
+}
+</script>
+
 <template>
-  <Bounded as="section" class="bg-white text-slate-500">
+  <Bounded
+    as="section"
+    class="bg-white text-slate-500"
+  >
     <div class="grid grid-flow-col-dense items-center gap-6 md:grid-cols-2 md:gap-10 lg:gap-20">
       <div :class="{ 'col-start-2': slice.primary.imageSide === 'Right' }">
         <PrismicImage
@@ -19,7 +39,7 @@
           class="grid max-w-prose gap-6"
           wrapper="div"
           :field="slice.primary.text"
-          :html-serializer="htmlSerializer"
+          :html-serializer="serializer"
         />
         <div v-if="slice.primary.buttonLink.link_type !== 'Any'">
           <ButtonLink :field="slice.primary.buttonLink">
@@ -30,27 +50,3 @@
     </div>
   </Bounded>
 </template>
-
-<script>
-import { getSliceComponentProps } from '@prismicio/vue/components'
-
-export default {
-  // The array passed to `getSliceComponentProps` is purely optional.
-  // Consider it as a visual hint for you when templating your slice.
-  props: getSliceComponentProps(['slice', 'index', 'slices', 'context']),
-  data () {
-    return {
-      htmlSerializer (type, element, _content, children) {
-        switch (type) {
-          case 'heading1':
-            return /* html */ `<h2 class="text-4xl font-semibold text-slate-800">${children.join('')}</h2>`
-          case 'hyperlink':
-            return /* html */ `<a href="${element.data.url}" class="underline decoration-1 underline-offset-1">${children.join('')}</a>`
-          default:
-            return null
-        }
-      }
-    }
-  }
-}
-</script>
