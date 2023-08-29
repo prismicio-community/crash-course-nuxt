@@ -26,10 +26,6 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: ['@nuxt/postcss8', '@nuxtjs/prismic'],
 
-  generate: {
-    exclude: ['/slice-simulator']
-  },
-
   build: {
     // See: https://github.com/nuxt/postcss8/issues/24
     loaders: {
@@ -42,8 +38,7 @@ export default {
         tailwindcss: {},
         autoprefixer: {}
       }
-    },
-    transpile: ['@prismicio/vue']
+    }
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
