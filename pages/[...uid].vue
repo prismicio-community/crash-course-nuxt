@@ -3,8 +3,9 @@ import { components } from '~/slices'
 
 const prismic = usePrismic()
 const route = useRoute()
-const { data: page } = useAsyncData((route.params.uid as string[]).join("/"), () =>
-  prismic.client.getByUID('page', route.params.uid as string || 'home')
+const { data: page } = useAsyncData(
+  Array.isArray(route.params.uid) ? route.params.uid.join("/") : route.params.uid,
+  () => prismic.client.getByUID('page', route.params.uid as string || 'home')
 )
 
 useHead({
