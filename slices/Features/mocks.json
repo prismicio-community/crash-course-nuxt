@@ -29,72 +29,76 @@
 				"__TYPE__": "FieldContent",
 				"value": "Center",
 				"type": "Select"
-			}
-		},
-		"items": [
-			{
-				"__TYPE__": "GroupItemContent",
+			},
+			"features": {
+				"__TYPE__": "GroupContentType",
 				"value": [
-					[
-						"image",
-						{
-							"origin": {
-								"id": "main",
-								"url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
-								"width": 5616,
-								"height": 3744
-							},
-							"url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
-							"width": 5616,
-							"height": 3744,
-							"edit": {
-								"zoom": 1,
-								"crop": {
-									"x": 0,
-									"y": 0
-								},
-								"background": "transparent"
-							},
-							"credits": null,
-							"alt": null,
-							"__TYPE__": "ImageContent",
-							"thumbnails": {}
-						}
-					],
-					[
-						"description",
-						{
-							"__TYPE__": "StructuredTextContent",
-							"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
 								{
-									"type": "paragraph",
-									"content": {
-										"text": "Eu cillum aliqua velit minim reprehenderit duis in ad esse exercitation minim."
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+										"width": 5616,
+										"height": 3744
+									},
+									"url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+									"width": 5616,
+									"height": 3744,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"credits": null,
+									"alt": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Eu cillum aliqua velit minim reprehenderit duis in ad esse exercitation minim."
+											}
+										}
+									]
+								}
+							],
+							[
+								"buttonLink",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://twitter.com"
 									}
 								}
+							],
+							[
+								"buttonText",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "require",
+									"type": "Text"
+								}
 							]
-						}
-					],
-					[
-						"buttonLink",
-						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"__TYPE__": "ExternalLink",
-								"url": "http://twitter.com"
-							}
-						}
-					],
-					[
-						"buttonText",
-						{
-							"__TYPE__": "FieldContent",
-							"value": "require",
-							"type": "Text"
-						}
-					]
+						]
+					}
 				]
 			}
-		]
+		},
+		"items": []
 	}
 ]

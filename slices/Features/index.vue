@@ -40,8 +40,8 @@ const cardSerializer : HTMLRichTextMapSerializer = {
       />
       <ul class="mt-8 grid grid-cols-1 items-start gap-12 md:grid-cols-3">
         <li
-          v-for="item in slice.items"
-          :key="$prismic.asText(item.description)"
+          v-for="feature in slice.primary.features"
+          :key="$prismic.asText(feature.description) || ''"
           class="grid gap-6"
           :class="{
             'justify-items-center text-center': slice.primary.alignment === 'Center'
@@ -49,21 +49,21 @@ const cardSerializer : HTMLRichTextMapSerializer = {
         >
           <div class="relative flex h-16 w-16 items-center justify-center overflow-hidden rounded-full bg-slate-200 text-slate-500">
             <PrismicImage
-              :field="item.image"
+              :field="feature.image"
               class="object-cover"
             />
           </div>
           <PrismicRichText
             class="grid gap-6"
-            :field="item.description"
+            :field="feature.description"
             :html-serializer="cardSerializer"
           />
-          <div v-if="item.buttonLink.link_type !== 'Any'">
+          <div v-if="feature.buttonLink.link_type !== 'Any'">
             <PrismicLink
-              :field="item.buttonLink"
+              :field="feature.buttonLink"
               class="group font-semibold text-slate-300 transition hover:text-slate-500"
             >
-              {{ item.buttonText || "Learn more" }}
+              {{ feature.buttonText || "Learn more" }}
               <span
                 aira-hidden
                 class="ml-2 inline-block transition-transform group-hover:translate-x-1"
