@@ -36,7 +36,7 @@ defineProps(getSliceComponentProps<Content.HeroSlice>(
         :field="slice.primary.text"
       />
       <ul
-        v-if="slice.items.length"
+        v-if="slice.primary.buttons.length"
         class="flex flex-wrap gap-4"
       >
         <li
