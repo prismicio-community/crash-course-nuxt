@@ -2,7 +2,7 @@
   "libraries": [
     "./slices"
   ],
-  "repositoryName": "crash-course",
+  "repositoryName": "crash-course-24",
   "adapter": "@slicemachine/adapter-nuxt",
   "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
 }

@@ -1,95 +1,101 @@
 [
-  {
-    "__TYPE__": "SharedSliceContent",
-    "variation": "default",
-    "primary": {
-      "tagline": {
-        "__TYPE__": "StructuredTextContent",
-        "value": [
-          {
-            "type": "paragraph",
-            "content": {
-              "text": "Ex ut excepteur dolore adipisicing commodo quis ut laborum minim mollit sit aliqua labore deserunt deserunt."
-            }
-          }
-        ]
-      },
-      "title": {
-        "__TYPE__": "StructuredTextContent",
-        "value": [
-          {
-            "type": "heading1",
-            "content": {
-              "text": "Helpful"
-            }
-          }
-        ]
-      },
-      "text": {
-        "__TYPE__": "StructuredTextContent",
-        "value": [
-          {
-            "type": "paragraph",
-            "content": {
-              "text": "Nisi quis ad ex magna labore consequat amet tempor. Anim ad amet amet incididunt. Labore deserunt deserunt fugiat cupidatat eiusmod."
-            }
-          }
-        ]
-      },
-      "backgroundImage": {
-        "__TYPE__": "ImageContent",
-        "origin": {
-          "id": "main",
-          "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482",
-          "width": 4016,
-          "height": 6016
-        },
-        "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482",
-        "width": 4016,
-        "height": 6016,
-        "edit": {
-          "zoom": 1,
-          "crop": {
-            "x": 0,
-            "y": 0
-          },
-          "background": "transparent"
-        },
-        "thumbnails": {}
-      }
-    },
-    "items": [
-      {
-        "__TYPE__": "GroupItemContent",
-        "value": [
-          [
-            "buttonLink",
-            {
-              "__TYPE__": "LinkContent",
-              "value": {
-                "__TYPE__": "ExternalLink",
-                "url": "https://slicemachine.dev"
-              }
-            }
-          ],
-          [
-            "buttonText",
-            {
-              "__TYPE__": "FieldContent",
-              "value": "value",
-              "type": "Text"
-            }
-          ],
-          [
-            "buttonStyle",
-            {
-              "__TYPE__": "FieldContent",
-              "value": "Filled",
-              "type": "Select"
-            }
-          ]
-        ]
-      }
-    ]
-  }
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"tagline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ex ut excepteur dolore adipisicing commodo quis ut laborum minim mollit sit aliqua labore deserunt deserunt."
+						}
+					}
+				]
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Helpful"
+						}
+					}
+				]
+			},
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nisi quis ad ex magna labore consequat amet tempor. Anim ad amet amet incididunt. Labore deserunt deserunt fugiat cupidatat eiusmod."
+						}
+					}
+				]
+			},
+			"backgroundImage": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1593642633279-1796119d5482",
+					"width": 4016,
+					"height": 6016
+				},
+				"url": "https://images.unsplash.com/photo-1593642633279-1796119d5482",
+				"width": 4016,
+				"height": 6016,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"buttons": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"link",
+								{
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev"
+									}
+								}
+							],
+							[
+								"text",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "value",
+									"type": "Text"
+								}
+							],
+							[
+								"style",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "Filled",
+									"type": "Select"
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
 ]

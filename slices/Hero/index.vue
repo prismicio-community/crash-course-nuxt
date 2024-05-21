@@ -36,18 +36,18 @@ defineProps(getSliceComponentProps<Content.HeroSlice>(
         :field="slice.primary.text"
       />
       <ul
-        v-if="slice.items.length"
+        v-if="slice.primary.buttons.length"
         class="flex flex-wrap gap-4"
       >
         <li
-          v-for="item in slice.items"
-          :key="item.buttonText || ''"
+          v-for="button in slice.primary.buttons"
+          :key="button.text || ''"
         >
           <ButtonLink
-            :field="item.buttonLink"
-            :type="item.buttonStyle === 'Filled' ? 'filled' : 'outlined'"
+            :field="button.link"
+            :type="button.style === 'Filled' ? 'filled' : 'outlined'"
           >
-            {{ item.buttonText }}
+            {{ button.text }}
           </ButtonLink>
         </li>
       </ul>
