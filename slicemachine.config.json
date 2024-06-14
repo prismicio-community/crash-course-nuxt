@@ -1,6 +1,6 @@
 {
   "libraries": [
-    "./slices"
+    "./app/slices"
   ],
   "repositoryName": "crash-course-24",
   "adapter": "@slicemachine/adapter-nuxt",
